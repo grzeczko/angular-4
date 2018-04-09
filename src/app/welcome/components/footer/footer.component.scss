@@ -1,0 +1,17 @@
+$font-color: #929ba7;
+
+:host {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  
+  a {
+    display: inline-block;
+    color: $font-color;
+  }
+  div.footer {
+    padding: 20px 40px;
+    background-color: #012971;
+    color: $font-color;
+  }
+}

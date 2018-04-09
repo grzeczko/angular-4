@@ -1,0 +1,14 @@
+{
+  "file": "/Users/grzeczko/Desktop/MyCal2/.db/config.json",
+  "couchdb": {
+    "database_dir": "/Users/grzeczko/Desktop/MyCal2/.db",
+    "uuid": "aa7b479b-c4d3-4f8e-97b2-38e0e537f829"
+  },
+  "httpd": {
+    "port": 5984
+  },
+  "log": {
+    "file": "/Users/grzeczko/Desktop/MyCal2/.db/pouch.log",
+    "level": "info"
+  }
+}

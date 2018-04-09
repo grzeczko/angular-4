@@ -1,0 +1,83 @@
+$section: "search-patient-screen";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+:host {
+  counter-reset: item;
+
+  ##{$section} {
+    background-color: #e9f3ff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+
+    h2 {
+      color: #223063;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 50px;
+    }
+
+    > p {
+      color: #4b5453;
+    }
+
+    ##{$section}-search {
+      text-align: left;
+      width: 650px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 2px solid #e1e5f0;
+      padding: 12px;
+
+      input {
+        background-color: #ebebeb;
+        width: 100%;
+        padding: 7px;
+        border: 2px solid #e1e1e1;
+      }
+
+      a {
+        text-decoration: none;
+
+        &.new-patient {
+          font-weight: 700;
+          padding: 10px 0;
+          color: #4a7ad9;
+          font-size: 16px;
+        }
+      }
+    }
+
+    ##{$section}-list {
+      padding-left: 0;
+      overflow-y: scroll;
+      height: 150px;
+
+      li {
+        counter-increment: item;
+        margin-bottom: 5px;
+        list-style-type: none;
+        cursor: pointer;
+
+        &:before {
+          margin-right: 10px;
+          content: counter(item);
+          color: #c1c1c1;
+          text-align: center;
+          display: inline-block;
+        }
+
+        &:hover {
+          background-color: lightblue;
+        }
+      }
+    }
+  }
+}

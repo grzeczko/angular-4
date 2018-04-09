@@ -1,0 +1,12 @@
+$section: "side-panel";
+
+:host {
+  float: left;
+
+  ##{$section} {
+    background-color: #c0d6f3;
+    width: 250px;
+    height: 624px;
+    padding: 15px;
+  }
+}

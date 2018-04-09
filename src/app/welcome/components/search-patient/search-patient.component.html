@@ -1,0 +1,16 @@
+<navigation></navigation>
+<div id="search-patient-screen">
+  <h2>Search by patient</h2>
+  <p>Select a patient from the list or begin typing</p>
+  <div id="search-patient-screen-search">
+    <input type="text" id="search" placeholder="Type to search" (keyup)="filterPatients(search.value)" #search />
+    <div id="search-patient-screen-select">
+      <a href="#" class="new-patient" (click)="addPatient()">+ NEW PATIENT</a>
+      <ol id="search-patient-screen-list">
+        <li *ngFor="let patient of patients" (click)="goToPatientPage(patient.id)">{{patient.id}}</li>
+      </ol>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+<footer></footer>

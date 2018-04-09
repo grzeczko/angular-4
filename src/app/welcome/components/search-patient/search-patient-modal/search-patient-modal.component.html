@@ -1,0 +1,52 @@
+<a href="#" class="modal-close-btn" (click)="closeModal()">X</a>
+
+<form [ngSwitch]="step" novalidate [formGroup]="patientForm" (ngSubmit)="onSubmit(patientForm)">
+  <!-- STEP 1 -->
+  <div id="step1" *ngSwitchCase="'1'">
+    <h3>Enter patient ID</h3>
+
+    <div class="patient-form form-group"
+         [ngClass]="{
+        'has-danger': id.invalid && (id.dirty || id.touched),
+        'has-success': id.valid && (id.dirty || id.touched)
+      }">
+      <input type="text" class="form-control" formControlName="id" asyncValidator autofocus required>
+    </div>
+
+    <div class="alert alert-danger"
+         *ngIf="id.errors && (id.dirty || id.touched)">
+      <p *ngIf="id.errors.required">Patient ID is required</p>
+      <p *ngIf="id.errors.asyncInvalid">Patient ID exists in database</p>
+    </div>
+
+    <div class="patient-next">
+      <p>
+        <button type="button" class="btn btn-primary" (click)="nextStep()">NEXT</button>
+      </p>
+      <p>
+        <span class="selected">&#9679;</span>&nbsp;<span>&#9679;</span><br />1 of 2
+      </p>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div id="step2" *ngSwitchCase="'2'">
+    <h3>Enter optional patient ID</h3>
+
+    <div class="patient-form form-group">
+      <input type="text" class="form-control" formControlName="optionalPatientId" autofocus>
+    </div>
+
+    <div class="patient-next">
+      <p>
+        <button type="button" class="btn btn-primary" (click)="goBack()">BACK</button>&emsp;
+        <button type="submit" class="btn btn-primary">DONE</button>
+      </p>
+      <p>
+        <span>&#9679;</span>&nbsp;<span class="selected">&#9679;</span><br />2 of 2
+      </p>
+    </div>
+  </div>
+
+  <pre>{{patientForm.value | json}}</pre>
+</form>

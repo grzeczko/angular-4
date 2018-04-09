@@ -1,0 +1,42 @@
+:host {
+  text-align: center;
+
+  .alert {
+    width: 550px;
+    margin: 0 auto;
+  }
+
+  input {
+    margin: 0 auto;
+    width: 500px;
+    padding: 7px;
+  }
+
+  .modal-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .patient-form {
+    margin-top: 100px;
+  }
+
+  .patient-next {
+    margin-top: 100px;
+    color: #909090;
+
+    .btn {
+      width: 200px;
+    }
+
+    span {
+      font-size: 30px;
+      color: #f1f1f1;
+
+      &.selected {
+        color: #cfcfcf;
+      }
+    }
+  }
+}
